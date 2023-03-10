@@ -73,8 +73,10 @@ spec:
               memory: {{ .Values.memoryRequests }}
               cpu: {{ .Values.cpuRequests }}
             limits:
-              memory: {{ .Values.memoryLimits }}
-              cpu: {{ .Values.cpuLimits }}
+              memory: {{ .Values.memoryLimits }} # the memory limit should equal the request.
+              {{ if .Values.cpuLimits }}
+              cpu: {{ .Values.cpuLimits }} # no cpu limit is preferred for performance.
+              {{ end }}
       {{ if .Values.nodeName }}
       nodeName: {{ .Values.nodeName }}
       {{ end }}
