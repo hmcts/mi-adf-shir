@@ -20,7 +20,7 @@ jobs:
   condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')
  
   pool:
-    vmImage: ubuntu-latest
+    vmImage: 'ubuntu-latest'
   steps:
   - template: steps/charts/release.yaml@cnp-library
     parameters:
