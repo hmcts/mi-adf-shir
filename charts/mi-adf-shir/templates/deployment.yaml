@@ -15,7 +15,7 @@ spec:
       labels:
         app: {{ .Values.appName }}
         aadpodidbinding: {{ .Values.aadIdentityName }}
-        ignored-by-dynatrace: "true"
+        ignored-by-dynatrace: "yes"
     spec:
       volumes:
         {{ if .Values.secretsMountPath }}
