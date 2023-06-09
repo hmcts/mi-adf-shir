@@ -15,7 +15,8 @@ spec:
       labels:
         app: {{ .Values.appName }}
         aadpodidbinding: {{ .Values.aadIdentityName }}
-        ignored-by-dynatrace: yes
+      annotations:
+        oneagent.dynatrace.com/inject: {{ .Values.injectDynatrace }}
     spec:
       volumes:
         {{ if .Values.secretsMountPath }}

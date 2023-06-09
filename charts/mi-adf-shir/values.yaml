@@ -27,3 +27,5 @@ haPort: "8060"
 memoryRequests: '2048Mi'
 memoryLimits: '2048Mi'
 cpuRequests: '500m'
+
+injectDynatrace: "false"
