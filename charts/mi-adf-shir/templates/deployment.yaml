@@ -16,7 +16,7 @@ spec:
         app: {{ .Values.appName }}
         aadpodidbinding: {{ .Values.aadIdentityName }}
       annotations:
-        oneagent.dynatrace.com/inject: {{ .Values.injectDynatrace }}
+        oneagent.dynatrace.com/inject: "{{ .Values.injectDynatrace }}"
     spec:
       volumes:
         {{ if .Values.secretsMountPath }}
