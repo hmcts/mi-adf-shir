@@ -14,7 +14,7 @@ spec:
       namespace: {{ .Values.namespace }}
       labels:
         app: {{ .Values.appName }}
-        aadpodidbinding: {{ .Values.aadIdentityName }}
+        azure.workload.identity/use: "true"
       annotations:
         oneagent.dynatrace.com/inject: "{{ .Values.injectDynatrace }}"
     spec:
