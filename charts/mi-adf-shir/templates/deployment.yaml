@@ -18,6 +18,7 @@ spec:
       annotations:
         oneagent.dynatrace.com/inject: "{{ .Values.injectDynatrace }}"
     spec:
+      serviceAccountName: {{ .Values.namespace }}
       volumes:
         {{ if .Values.secretsMountPath }}
         - name: {{ .Values.keyVaultName }}-secrets-store
