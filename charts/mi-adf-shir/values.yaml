@@ -7,12 +7,6 @@ replicaCount: 2
 appName: mi-adf-shir
 namespace: mi
 
-# Use only one of the two below. Currently Windows does not support podIdentity so using SOPS
-usePodIdentity: false
-aadIdentityName: mi-integration-service
-
-useVMManagedIdentity: true
-
 keyVaultName: mi-vault
 keyVaultSecrets:
   - mi-adf-auth-key
