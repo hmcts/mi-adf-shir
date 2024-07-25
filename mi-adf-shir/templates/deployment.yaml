@@ -88,7 +88,7 @@ spec:
             exec:
               command:
               - powershell
-              - c
+              - /c
               - "C:/SHIR/health-check.ps1"
             initialDelaySeconds: 600
             periodSeconds: 30
