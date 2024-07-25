@@ -84,6 +84,14 @@ spec:
               {{ if .Values.cpuLimits }}
               cpu: {{ .Values.cpuLimits }} # no cpu limit is preferred for performance.
               {{ end }}
+          livenessProbe:
+            exec:
+              command:
+              - powershell
+              - c
+              - "C:/SHIR/health-check.ps1"
+            initialDelaySeconds: 600
+            periodSeconds: 30
       {{ if .Values.nodeName }}
       nodeName: {{ .Values.nodeName }}
       {{ end }}
