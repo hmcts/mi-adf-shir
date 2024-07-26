@@ -84,6 +84,13 @@ spec:
               {{ if .Values.cpuLimits }}
               cpu: {{ .Values.cpuLimits }} # no cpu limit is preferred for performance.
               {{ end }}
+          livenessProbe:
+            exec:
+              command:
+              - echo "Hello Liveness"; echo "Hello Liveness" > /proc/1/fd/1; cat "C:\SHIR\status-check.txt"; cat "C:\SHIR\status-check.txt" > /proc/1/fd/1; powershell /c "C:/SHIR/health-check.ps1"; cat "C:\SHIR\status-check.txt"; cat "C:\SHIR\status-check.txt" > /proc/1/fd/1;
+            initialDelaySeconds: 600
+            periodSeconds: 30
+            timeout: 60
       {{ if .Values.nodeName }}
       nodeName: {{ .Values.nodeName }}
       {{ end }}
