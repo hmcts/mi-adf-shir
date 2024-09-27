@@ -60,11 +60,11 @@ spec:
               value: "{{ .Values.haEnabled }}"
             - name: HA_PORT
               value: "{{ .Values.haPort }}"
-            - name: ENABLE_AUTO_EXPIRY
+            - name: ENABLE_AE
               value: "{{ .Values.autoExpiryEnabled }}"
-            - name: AUTO_EXPIRY_TIMEOUT
+            - name: AE_TIME
               value: "{{ .Values.autoExpiryTimeout }}"
-            - name: SHIR_TIMEZONE
+            - name: TZ
               value: "{{ .Values.timezone }}"
             {{ if .Values.shirNodeName }}
             - name: NODE_NAME
