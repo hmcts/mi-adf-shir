@@ -29,4 +29,3 @@ jobs:
       chartReleaseName: mi-adf-shir
       chartNamespace: chart-tests
       acrName: "hmctspublic-oci"
-      chartPath: "./charts/"
