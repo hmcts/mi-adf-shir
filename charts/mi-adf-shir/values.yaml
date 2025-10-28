@@ -17,6 +17,9 @@ secretsMountPath: 'C:\kvmnt'
 shirNodeName: ''
 haEnabled: "true"
 haPort: "8060"
+autoExpiryEnabled: "true"
+autoExpiryTimeout: "600"
+timezone: "UTC"
 
 memoryRequests: '2048Mi'
 memoryLimits: '2048Mi'

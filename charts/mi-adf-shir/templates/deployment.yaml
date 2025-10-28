@@ -58,6 +58,14 @@ spec:
             {{ end }}
             - name: ENABLE_HA
               value: "{{ .Values.haEnabled }}"
+            - name: HA_PORT
+              value: "{{ .Values.haPort }}"
+            - name: ENABLE_AE
+              value: "{{ .Values.autoExpiryEnabled }}"
+            - name: AE_TIME
+              value: "{{ .Values.autoExpiryTimeout }}"
+            - name: TZ
+              value: "{{ .Values.timezone }}"
             {{ if .Values.shirNodeName }}
             - name: NODE_NAME
               value: "{{ .Values.shirNodeName }}"
@@ -67,8 +75,6 @@ spec:
                 fieldRef:
                   fieldPath: metadata.name
             {{ end }}
-            - name: HA_PORT
-              value: "{{ .Values.haPort }}"
           {{ if .Values.secretsMountPath }}
           volumeMounts:
             - name: {{ .Values.keyVaultName }}-secrets-store
